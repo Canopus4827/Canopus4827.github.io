@@ -107,3 +107,12 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'pixel', sans-serif !important;
   font-size: 22px;
 }
+/* 给文章里的图片加复古边框 */
+.post-content img {
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important; /* 凸起边框 */
+  box-shadow: 2px 2px 0px #000000 !important; /* 阴影 */
+  margin: 15px auto;
+  display: block;
+  max-width: 100%;
+}
