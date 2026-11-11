@@ -14,3 +14,96 @@ h1, h2, h3, h4, h5, h6,
 #site-name { 
   font-family: 'pixel', sans-serif !important; 
 }
+/* ==========================================
+   复古 Windows 98/XP 窗口风格卡片
+   ========================================== */
+
+/* 1. 卡片主体：换成经典的复古灰底，并加上 3D 凸起边框 */
+#aside-content .card-widget, 
+.layout > div:first-child:not(.recent-posts) {
+  background-color: #c0c0c0 !important; /* 经典的 Win98 灰色 */
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important; /* 左上白、右下灰，经典的 3D 凸起效果 */
+  border-radius: 0px !important; /* 不要圆角，要直角 */
+  box-shadow: 2px 2px 0px #000000 !important; /* 加上硬阴影，更有立体感 */
+  color: #000000 !important; /* 文字改回黑色 */
+  padding: 10px !important;
+}
+
+/* 2. 模拟窗口的“蓝色标题栏” */
+/* 因为文章列表没有明确的标题栏元素，我们用卡片的顶部边框或者内边距来模拟 */
+.layout > div:first-child:not(.recent-posts) {
+  padding-top: 30px !important;
+  position: relative;
+}
+/* 强行在文章卡片顶部画一条蓝色的渐变条 */
+.layout > div:first-child:not(.recent-posts)::before {
+  content: "A:\\1999\\Blog\\MyPosts"; /* 假装是窗口标题路径 */
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 10px;
+  background: linear-gradient(to right, #000080, #1084d0); /* 经典蓝色渐变 */
+  color: #ffffff;
+  font-family: 'pixel', sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 3. 把标题、日期等文字也改成像素风并适配颜色 */
+.layout > div:first-child h2, 
+.layout > div:first-child h3, 
+#aside-content .card-widget {
+  font-family: 'pixel', sans-serif !important;
+}
+.card-info-social-icons {
+  color: #000080 !important; /* 社交图标改成深蓝色 */
+}
+
+/* 4. 侧边栏卡片里的各种横线适配 */
+.card-widget hr {
+  border-color: #808080 !important;
+}
+/* ==========================================
+   补齐：左侧文章卡片的复古 Window 风格
+   ========================================== */
+
+/* 1. 把左侧大白框变成复古灰底 */
+.recent-posts .recent-post-item {
+  background-color: #c0c0c0 !important; /* 经典灰色 */
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important; /* 3D 凸起边框 */
+  border-radius: 0px !important; /* 去掉圆角 */
+  box-shadow: 2px 2px 0px #000000 !important; /* 硬阴影 */
+  margin-bottom: 20px; /* 卡片之间留点空隙 */
+}
+
+/* 2. 强行在文章卡片顶部画一条经典的蓝色标题栏 */
+.recent-posts .recent-post-item::before {
+  content: "A:\\1999\\Blog\\MyPosts"; /* 假装是窗口路径 */
+  display: block;
+  width: 100%;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 10px;
+  background: linear-gradient(to right, #000080, #1084d0); /* 经典 XP 蓝 */
+  color: #ffffff;
+  font-family: 'pixel', sans-serif !important;
+  font-weight: bold;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 3. 修复文章卡片内部的标题和文字颜色 */
+.recent-posts .recent-post-item .post-title a,
+.recent-posts .recent-post-item .post-meta,
+.recent-posts .recent-post-item .content {
+  color: #000000 !important; /* 文字强制黑色，看得清 */
+}
+
+/* 4. 标题也用像素字体 */
+.recent-posts .recent-post-item .post-title a {
+  font-family: 'pixel', sans-serif !important;
+  font-size: 22px;
+}
