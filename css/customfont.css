@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'pixel';  /* 给字体起个英文代号 */
+  src: url('/fonts/pixel.ttf'); /* 指向你刚才放字体的路径 */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* 强制文章标题、主页卡片名字、导航栏使用像素字体 */
+h1, h2, h3, h4, h5, h6, 
+.post-title, 
+.site-title, 
+.site-name, 
+.card-info-name, 
+#site-name { 
+  font-family: 'pixel', sans-serif !important; 
+}
